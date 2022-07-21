@@ -25,7 +25,7 @@ public class PublisherController {
             publisherService.publishEvent(event.toBuilder().id(UUID.randomUUID()).build());
             return new ResponseEntity<>("Event got published successfully", HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
